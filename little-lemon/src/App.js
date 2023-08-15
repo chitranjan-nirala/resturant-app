@@ -1,10 +1,15 @@
 import './App.css';
+import Header from "./components/Header";
+import Routing from "./components/Routing";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App">
-     <p>hii i am chitranjan </p>
-    </div>
+    <>
+      <Header/>
+      <Routing />
+      <Footer/>
+    </>
   );
 }
 

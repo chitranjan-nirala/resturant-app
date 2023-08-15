@@ -1,0 +1,62 @@
+import "./styles.css";
+import { ReactComponent as Instagram } from '../assets/instagram.svg';
+import { ReactComponent as Facebook } from '../assets/facebook.svg';
+import { ReactComponent as Twitter } from '../assets/twitter.svg';
+import { ReactComponent as Pinterest } from '../assets/pinterest.svg';
+import React from 'react';
+import footerlogo from '../assets/footerlogo.png';
+import { Link } from 'react-router-dom';
+
+function Footer() {
+
+  const handleScrollToTop = () => {
+    window.scrollTo(0, 0);
+  }
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
+
+  return (
+    <>
+      <footer>
+        <img
+          src={footerlogo}
+          alt="footer-logo"
+        />
+        <nav>
+          <ul>
+            <li><Link to="/" onClick={handleScrollToTop}>Home</Link></li>
+            <li><Link to="/about" onClick={handleScrollToTop}>About</Link></li>
+            <li><Link to="/menu" onClick={handleScrollToTop}>Menu</Link></li>
+            <li><Link to="/reservations" onClick={handleScrollToTop}>Reservations</Link></li>
+            {/* <li><Link to="/order-online" onClick={handleScrollToTop}>Order Online</Link></li> */}
+            <li><Link to="/login" onClick={handleScrollToTop}>Login</Link></li>
+            <li><Link to="/feedback" onClick={handleScrollToTop}>Feedback</Link></li>
+          </ul>
+        </nav>
+        <nav>
+          <ul>
+            <h5 className="footer-contact">Contact</h5>
+            <li><i>Adress:</i>AG-172,kolkata, 16foot, kestopur</li>
+            <li><i>Phone number:</i> +91-8252800085</li>
+            <li><i>Email:</i> little-lemon@gmail.com</li>
+          </ul>
+        </nav>
+        <nav>
+          <ul>
+            <li><a target="_blank" rel="noreferrer" href="https://www.instagram.com/" role="button" alt="Instagram"><Instagram /></a></li>
+            <li><a target="_blank" rel="noreferrer" href="https://www.facebook.com/" role="button" alt="Facebook"><Facebook /></a></li>
+            <li><a target="_blank" rel="noreferrer" href="https://twitter.com/" role="button" alt="Twitter"><Twitter /></a></li>
+            <li><a target="_blank" rel="noreferrer" href="https://www.pinterest.com/" role="button" alt="Pinterest"><Pinterest /></a></li>
+          </ul>
+        </nav>
+      </footer>
+      <div className="copyright" >
+          <span>Created by Chitranjan Kumar Nirala</span>
+          <span> &copy; Copyright {year }</span>
+      </div>
+
+    </>
+  )
+}
+
+export default Footer;
